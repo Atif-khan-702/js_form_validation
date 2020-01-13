@@ -7,58 +7,72 @@ function insertRecord(){
   
   if(document.getElementById('fname').value.trim()==""){
     fname.style.border = "solid 1px red";
+    alert("First name must not be empty");
     return false;
   }
   else if(document.getElementById('lname').value.trim()==""){
     lname.style.border = "solid 1px red";
+    alert("Last name must not be empty");
     return false;
   }
   else if(document.getElementById('fatherName').value.trim()==""){
     fatherName.style.border = "solid 1px red";
+    alert("Father's name must not be empty");
     return false;
   }
   else if(document.getElementById('motherName').value.trim()==""){
     motherName.style.border = "solid 1px red";
+    alert("Mother's name must not be empty");
     return false;
   }
   else if(document.getElementById('blood').value.trim()==""){
     blood.style.border = "solid 1px red";
+    alert("Blood group must not be empty");
     return false;
   }
   else if(document.getElementById('email').value.trim()==""){
     email.style.border = "solid 1px red";
+    alert("Email must not be empty");
     return false;
   }
   else if(document.getElementById('mobile').value.trim()==""){
     mobile.style.border = "solid 1px red";
+    alert("Mobile Number must not be empty");
     return false;
   }
   else if(document.getElementById('adhar').value.trim()==""){
     adhar.style.border = "solid 1px red";
+    alert("Adhar Number must not be empty");
     return false;
   }
   else if(document.getElementById('gender').value.trim()==""){
     gender.style.border = "solid 1px red";
+    alert("Gender must not be empty");
     return false;
   }
   else if(document.getElementById('dob').value.trim()==""){
     dob.style.border = "solid 1px red";
+    alert("DOB must not be empty");
     return false;
   }
   else if(document.getElementById('marry').value.trim()==""){
     marry.style.border = "solid 1px red";
+    alert("Marrital status must not be empty");
     return false;
   }
   else if(document.getElementById('country').value.trim()==""){
     country.style.border = "solid 1px red";
+    alert("Country name must not be empty");
     return false;
   }
   else if(document.getElementById('state').value.trim()==""){
     state.style.border = "solid 1px red";
+    alert("State name must not be empty");
     return false;
   }
   else if(document.getElementById('city').value.trim()==""){
     city.style.border = "solid 1px red";
+    alert("City name must not be empty");
     return false;
   }else{
 
@@ -98,8 +112,11 @@ function insertRecord(){
     cell13.innerHTML = document.getElementById('country').value.trim();
     cell14.innerHTML = document.getElementById('state').value.trim();
     cell15.innerHTML = document.getElementById('city').value.trim();
-    cell16.innerHTML = '<p style="color:blue;">Edit Record</p>';
+    cell16.innerHTML = '<p style="color:blue;" onclick="return editRow(this)">Edit Record</p>';
     cell17.innerHTML = '<p style="color:red;" onclick="deleteRow(this);">Delete Record</p>';
+
+    frm = document.getElementsByName('myForm')[0];
+    frm.reset();
 
   }
  
@@ -120,6 +137,123 @@ function insertRecord(){
 function deleteRow(r) {
   var i = r.parentNode.parentNode.rowIndex;
   document.getElementById("mytable").deleteRow(i);
+}
+
+function editRow(row){
+  var i = row.parentNode.parentNode.rowIndex;
+
+  r = document.getElementById("mytable").rows[i];
+
+  document.getElementById('fname').value=r.cells[0].innerHTML;
+  document.getElementById('mname').value=r.cells[1].innerHTML;
+  document.getElementById('lname').value=r.cells[2].innerHTML;
+  document.getElementById('fatherName').value=r.cells[3].innerHTML;
+  document.getElementById('motherName').value=r.cells[4].innerHTML;
+  document.getElementById('blood').value=r.cells[5].innerHTML;
+  document.getElementById('email').value=r.cells[6].innerHTML;
+  document.getElementById('mobile').value=r.cells[7].innerHTML;
+  document.getElementById('adhar').value=r.cells[10].innerHTML;
+  document.getElementById('gender').value=r.cells[8].innerHTML;
+  document.getElementById('dob').value=r.cells[11].innerHTML;
+  document.getElementById('marry').value=r.cells[9].innerHTML;
+  document.getElementById('country').value=r.cells[12].innerHTML;
+  document.getElementById('state').value=r.cells[13].innerHTML;
+  document.getElementById('city').value=r.cells[14].innerHTML;
+
+}
+
+function updateRecord(){
+
+  if(document.getElementById('fname').value.trim()==""){
+    fname.style.border = "solid 1px red";
+    alert("First name must not be empty");
+    return false;
+  }
+  else if(document.getElementById('lname').value.trim()==""){
+    lname.style.border = "solid 1px red";
+    alert("Last name must not be empty");
+    return false;
+  }
+  else if(document.getElementById('fatherName').value.trim()==""){
+    fatherName.style.border = "solid 1px red";
+    alert("Father's name must not be empty");
+    return false;
+  }
+  else if(document.getElementById('motherName').value.trim()==""){
+    motherName.style.border = "solid 1px red";
+    alert("Mother's name must not be empty");
+    return false;
+  }
+  else if(document.getElementById('blood').value.trim()==""){
+    blood.style.border = "solid 1px red";
+    alert("Blood group must not be empty");
+    return false;
+  }
+  else if(document.getElementById('email').value.trim()==""){
+    email.style.border = "solid 1px red";
+    alert("Email must not be empty");
+    return false;
+  }
+  else if(document.getElementById('mobile').value.trim()==""){
+    mobile.style.border = "solid 1px red";
+    alert("Mobile Number must not be empty");
+    return false;
+  }
+  else if(document.getElementById('adhar').value.trim()==""){
+    adhar.style.border = "solid 1px red";
+    alert("Adhar Number must not be empty");
+    return false;
+  }
+  else if(document.getElementById('gender').value.trim()==""){
+    gender.style.border = "solid 1px red";
+    alert("Gender must not be empty");
+    return false;
+  }
+  else if(document.getElementById('dob').value.trim()==""){
+    dob.style.border = "solid 1px red";
+    alert("DOB must not be empty");
+    return false;
+  }
+  else if(document.getElementById('marry').value.trim()==""){
+    marry.style.border = "solid 1px red";
+    alert("Marrital status must not be empty");
+    return false;
+  }
+  else if(document.getElementById('country').value.trim()==""){
+    country.style.border = "solid 1px red";
+    alert("Country name must not be empty");
+    return false;
+  }
+  else if(document.getElementById('state').value.trim()==""){
+    state.style.border = "solid 1px red";
+    alert("State name must not be empty");
+    return false;
+  }
+  else if(document.getElementById('city').value.trim()==""){
+    city.style.border = "solid 1px red";
+    alert("City name must not be empty");
+    return false;
+  }else{
+    r.cells[0].innerHTML=document.getElementById('fname').value;
+    r.cells[1].innerHTML=document.getElementById('mname').value;
+    r.cells[2].innerHTML=document.getElementById('lname').value;
+    r.cells[3].innerHTML=document.getElementById('fatherName').value;
+    r.cells[4].innerHTML=document.getElementById('motherName').value;
+    r.cells[5].innerHTML=document.getElementById('blood').value;
+    r.cells[6].innerHTML=document.getElementById('email').value;
+    r.cells[7].innerHTML=document.getElementById('mobile').value;
+    r.cells[8].innerHTML=document.getElementById('gender').value;
+    r.cells[9].innerHTML=document.getElementById('marry').value;
+    r.cells[10].innerHTML=document.getElementById('adhar').value;
+    r.cells[11].innerHTML=document.getElementById('dob').value;
+    r.cells[12].innerHTML=document.getElementById('country').value;
+    r.cells[13].innerHTML=document.getElementById('state').value;
+    r.cells[14].innerHTML=document.getElementById('city').value;
+    r.cells[15].innerHTML='<p style="color:blue;" onclick="return editRow(this)">Edit Record</p>';
+    r.cells[16].innerHTML='<p style="color:red;" onclick="deleteRow(this);">Delete Record</p>';
+
+    frm.reset();
+  }
 }
 
 function populate1(s1,s2){
